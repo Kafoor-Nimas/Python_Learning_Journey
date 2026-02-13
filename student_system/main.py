@@ -64,3 +64,27 @@ def search_student():
             print(f"Grade: {grade}")
             return
     print("Student not found.")
+
+
+#Class Statistics
+def class_statistics():
+    students=read_students()
+
+    if not students:
+        print("No data available.")
+        return
+    
+    marks_list=[]
+    for student in students:
+        marks_list.append(student["marks"])
+
+    total=calculate_total_recursive(marks_list)
+    average=total/len(marks_list)
+
+    highest = find_highest(marks_list)
+    lowest = find_lowest(marks_list)
+
+    print("\n--- Class Statistics ---")
+    print("Average Marks:",round(average,2))
+    print("Highest Marks:",highest)
+    print("Lowest Marks:",lowest)
