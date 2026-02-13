@@ -32,3 +32,22 @@ def calculate_total_recursive(marks_list):
 
 find_highest = lambda marks:max(marks)
 find_lowest = lambda marks:min(marks)
+
+#Read Students from file
+
+def read_students():
+    students = []
+
+    try:
+        with open('students.txt','r')as file:
+            for line in file:
+                student_id,name,marks = line.strip().split(",")
+                students.append({
+                    "id":student_id,
+                    "name":name,
+                    "marks":int(marks)
+                })
+    except FileNotFoundError:
+        pass
+
+    return students
