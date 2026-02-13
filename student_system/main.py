@@ -1,8 +1,8 @@
 #main.py
 #Student Information & Grade Processing System
 
-import utils
-# from utils import *
+import utils 
+from utils import *
 
 def add_student():
     try:
@@ -48,4 +48,19 @@ def view_students():
         print(f"Marks: {student['marks']}")
         print(f"Grade: {grade}")
         print("-------------")
-        
+
+#Search student by ID
+
+def search_student():
+    search_id = input("Enter Student ID to search: ")
+    students = read_students()
+
+    for student in students:
+        if student["id"] == search_id:
+            grade =calculate_grade(student['marks'])
+            print("\nStudent Found!")
+            print(f"Name: {student['name']}")
+            print(f"Marks: {student['marks']}")
+            print(f"Grade: {grade}")
+            return
+    print("Student not found.")
