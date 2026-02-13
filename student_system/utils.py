@@ -3,6 +3,8 @@
 
 #Custom Exception for Invalid marks
 
+import os
+
 class InvalidMarksError(Exception):
     pass
 
@@ -54,5 +56,8 @@ def read_students():
 
 #Add student to File
 def add_student_to_file(student_id, name, marks):
-    with open("students.txt","a") as file:
+    # Get the folder where this script is located
+    script_dir=os.path.dirname(os.path.abspath(__file__))
+    file_path=os.path.join(script_dir, "students.txt")
+    with open(file_path,"a") as file:
         file.write(f"{student_id},{name},{marks}\n")
