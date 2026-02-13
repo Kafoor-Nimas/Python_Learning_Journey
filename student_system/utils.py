@@ -21,3 +21,10 @@ def calculate_grade(marks):
         return "F"
         
 
+#Recursive function to Calculate Total
+
+def calculate_total_recursive(marks_list):
+    if len(marks_list) == 0:
+        return 0
+    return marks_list[0] + calculate_total_recursive(marks_list[1:])
+
