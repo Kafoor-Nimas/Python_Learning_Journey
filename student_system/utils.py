@@ -28,3 +28,7 @@ def calculate_total_recursive(marks_list):
         return 0
     return marks_list[0] + calculate_total_recursive(marks_list[1:])
 
+#highest and lowest marks using lambda expressions
+
+find_highest = lambda marks:max(marks)
+find_lowest = lambda marks:min(marks)
