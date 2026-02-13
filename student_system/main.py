@@ -88,3 +88,35 @@ def class_statistics():
     print("Average Marks:",round(average,2))
     print("Highest Marks:",highest)
     print("Lowest Marks:",lowest)
+
+#Main Menu
+def main():
+    while True:
+        print("\n==== Student Information system ====")
+        print("1. Add Student")
+        print("2. View Students")
+        print("3. search students")
+        print("4. Class Statistics")
+        print("5. Exit")
+
+        choice=input("Enter Your chice: ")
+
+        if choice == "1":
+            add_student()
+        elif choice == "2":
+            view_students()
+        elif choice == "3":
+            search_student()
+        elif choice == "4":
+            class_statistics()
+        elif choice == "5":
+            print("Exiting program...")
+            break
+        else:
+            print("Invalid choice. Please try again.")
+
+#"Only run the main() function if this file is executed directly."
+
+#Program Entry Point
+if __name__ =="__main__":
+    main()
