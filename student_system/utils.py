@@ -51,3 +51,8 @@ def read_students():
         pass
 
     return students
+
+#Add student to File
+def add_student_to_file(student_id, name, marks):
+    with open("students.txt","a") as file:
+        file.write(f"{student_id},{name},{marks}\n")
