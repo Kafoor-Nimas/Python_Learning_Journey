@@ -32,3 +32,20 @@ def add_student():
     except ValueError:
         print("Marks must be a valid number.")
 
+#View All Students
+def view_students():
+    students=read_students()
+
+    if not students:
+        print("No student record found.")
+        return
+    
+    print("\n-- student Records --")
+    for student in students:
+        grade = calculate_grade(student["marks"])
+        print(f"ID: {student['id']}")
+        print(f"Name: {student['name']}")
+        print(f"Marks: {student['marks']}")
+        print(f"Grade: {grade}")
+        print("-------------")
+        
